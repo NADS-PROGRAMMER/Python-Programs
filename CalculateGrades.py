@@ -1,6 +1,7 @@
 grades = []
 
 
+# Calculate the total grade
 def total_grade():
     total = 0
 
