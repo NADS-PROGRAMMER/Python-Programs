@@ -20,8 +20,25 @@ for index in range(0, len(grades)):
     print(grades[index])
 =======
 import numpy as np
+import openpyxl
+import matplotlib.pyplot as plt
 
-a = np.array([[1, 2, 3], [4, 5, 6]])
+file = openpyxl.load_workbook('inventory.xlsx')
+
+sheet = file['Sheet1']
+
+companies = {}
+inventory_per_company = {}
+
+for i in range(2, sheet.max_row + 1):
+    company = sheet.cell(i, 4).value
+    inventory = sheet.cell(i, 3).value
+
+    if company not in companies:
+        companies[company] = company
+
+array_companies = list(companies.values()) # convert to list
+
 
 
 >>>>>>> f32eb80 (SOLVED Complements problem)
